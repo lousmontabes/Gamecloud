@@ -6,4 +6,6 @@
  * Time: 12:52
  */
 
+echo "This is an example response.";
+
 ?>
