@@ -22,7 +22,7 @@ echo $x;
 echo " ";
 echo $y;
 
-$result = mysqli_query($con, "UPDATE matches SET player1_x='$x', player1_y='$y' WHERE id='0';")
+$result = mysqli_query($con, "UPDATE matches SET player1_x='$x', player1_y='$y' WHERE id='0';");
 
 
 ?>
