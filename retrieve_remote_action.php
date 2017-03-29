@@ -6,6 +6,11 @@
  * Time: 12:52
  */
 
-echo "This is an example response.";
+$x = rand(10, 100);
+$y = rand(10, 100);
+
+$coordinates = ["x" => $x, "y" => $y];
+
+return json_encode($coordinates);
 
 ?>
