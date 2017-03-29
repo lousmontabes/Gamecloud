@@ -15,11 +15,8 @@ $db = substr($url["path"], 1);
 
 $con = new mysqli($server, $username, $password, $db);
 
-$json = $_GET['data'];
-$point = json_decode($json);
-
-$x = $point['x'];
-$y = $point['y'];
+$x = $_GET['x'];
+$y = $_GET['y'];
 
 echo $x;
 echo " ";
