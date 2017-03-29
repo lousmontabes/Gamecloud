@@ -21,6 +21,10 @@ $point = json_decode($json);
 $x = $point['x'];
 $y = $point['y'];
 
+echo $x;
+echo " ";
+echo $y;
+
 $result = mysqli_query($con, "UPDATE matches SET player1_x='$x', player1_y='$y' WHERE id='0';")
 
 
