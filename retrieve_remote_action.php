@@ -11,6 +11,6 @@ $y = rand(10, 100);
 
 $coordinates = ["x" => $x, "y" => $y];
 
-return json_encode($coordinates);
+echo json_encode($coordinates);
 
 ?>
