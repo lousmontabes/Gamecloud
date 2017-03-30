@@ -21,6 +21,6 @@ echo $requestId;
 $result = mysqli_query($con, "SELECT assigned_match FROM match_requests WHERE id = {$requestId}");
 $row = mysqli_fetch_array($result);
 
-return $row[0];
+echo $row[0];
 
 ?>
