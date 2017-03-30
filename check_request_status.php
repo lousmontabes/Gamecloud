@@ -16,7 +16,6 @@ $db = substr($url["path"], 1);
 $con = new mysqli($server, $username, $password, $db);
 
 $requestId = $_GET['requestId'];
-echo $requestId;
 
 $result = mysqli_query($con, "SELECT assigned_match FROM match_requests WHERE id = {$requestId}");
 $row = mysqli_fetch_array($result);
