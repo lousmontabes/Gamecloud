@@ -15,8 +15,4 @@ $db = substr($url["path"], 1);
 
 $con = new mysqli($server, $username, $password, $db);
 
-$result = mysqli_query($con,"INSERT INTO queue (id) VALUES (NULL)");
-
-echo $result;
-
 ?>
