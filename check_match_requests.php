@@ -23,7 +23,9 @@ if (mysqli_num_rows($result) == 0){
     // There are no active match requests. Create a match request.
 
     $result = mysqli_query($con, "INSERT INTO match_requests(id) VALUE (null)");
-    echo "{\"action\":0,\"index\":0}";
+    $requestId = mysqli_insert_id($con);
+
+    echo "{\"action\":0,\"index\":{$requestId}}";
 
 }else{
 
