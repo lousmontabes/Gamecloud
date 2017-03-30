@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) == 0){
     $result = mysqli_query($con, "INSERT INTO matches(id) VALUE (null)");
     $matchId = mysqli_insert_id($con);
 
-    $result = mysqli_query($con, "UPDATE match_requests SET assigned_match VALUE {$matchId}");
+    $result = mysqli_query($con, "UPDATE match_requests SET assigned_match VALUE {$matchId} WHERE id = {$row['id']}");
 
     echo "{\"action\":1,\"index\":{$matchId}}";
 
