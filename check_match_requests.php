@@ -15,7 +15,7 @@ $db = substr($url["path"], 1);
 
 $con = new mysqli($server, $username, $password, $db);
 
-$result = mysqli_query($con, "SELECT id FROM match_requests");
+$result = mysqli_query($con, "SELECT id FROM match_requests LIMIT 1");
 $row = mysqli_fetch_array($result);
 
 if (mysqli_num_rows($result) == 0){
@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) == 0){
     $result = mysqli_query($con, "INSERT INTO matches(id) VALUE (null)");
     $matchId = mysqli_insert_id($con);
 
-    $result = mysqli_query($con, "UPDATE match_requests SET assigned_match VALUE {$matchId} WHERE id = {$row['id']}");
+    $result = mysqli_query($con, "UPDATE match_requests SET assigned_match = {$matchId} WHERE id = {$row['id']}");
 
     echo "{\"action\":1,\"index\":{$matchId}}";
 
