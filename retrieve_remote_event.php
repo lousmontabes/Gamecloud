@@ -18,12 +18,13 @@ $con = new mysqli($server, $username, $password, $db);
 $matchId = $_GET['matchId'];
 $player = $_GET['player'];
 
-$result = mysqli_query($con, "SELECT player{$player}_event FROM matches WHERE id={$matchId};");
+$result = mysqli_query($con, "SELECT player{$player}_eventIndex, player{$player}_event FROM matches WHERE id={$matchId};");
 $row = mysqli_fetch_array($result);
 
-$event = $row[0];
+$eventIndex = $row[0];
+$event = $row[1];
 
-$coordinates = ["event" => $event];
+$coordinates = ["eventIndex" => $eventIndex, "event" => $event];
 
 echo json_encode($coordinates);
 

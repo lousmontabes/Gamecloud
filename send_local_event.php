@@ -18,9 +18,10 @@ $con = new mysqli($server, $username, $password, $db);
 $matchId = $_GET['matchId'];
 $player = $_GET['player'];
 $event = $_GET['event'];
+$eventIndex = $_GET['eventIndex'];
 
-echo $event;
+echo $eventIndex . ": " . $event;
 
-$result = mysqli_query($con, "UPDATE matches SET player{$player}_event={$event} WHERE id={$matchId};");
+$result = mysqli_query($con, "UPDATE matches SET player{$player}_event={$event}, player{$player}_eventIndex={$eventIndex} WHERE id={$matchId};");
 
 ?>
