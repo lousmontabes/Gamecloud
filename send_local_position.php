@@ -19,12 +19,11 @@ $matchId = $_GET['matchId'];
 $player = $_GET['player'];
 $x = $_GET['x'];
 $y = $_GET['y'];
+$angle = $_GET['angle'];
 
-echo $x;
-echo " ";
-echo $y;
+echo $x . " " . $y . " " . $angle;
 
-$result = mysqli_query($con, "UPDATE matches SET player{$player}_x={$x}, player{$player}_y={$y} WHERE id={$matchId};");
+$result = mysqli_query($con, "UPDATE matches SET player{$player}_x={$x}, player{$player}_y={$y}, player{$player}_angle={$angle} WHERE id={$matchId};");
 
 
 ?>
