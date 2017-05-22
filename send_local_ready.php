@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: lluismontabes
- * Date: 15/5/17
- * Time: 21:25
+ * Date: 22/5/17
+ * Time: 14:39
  */
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -17,14 +17,10 @@ $con = new mysqli($server, $username, $password, $db);
 
 $matchId = $_GET['matchId'];
 $player = $_GET['player'];
+$ready = $_GET['ready'];
 
-$result = mysqli_query($con, "SELECT player{$player}_angle FROM matches WHERE id={$matchId};");
-$row = mysqli_fetch_array($result);
+echo $ready;
 
-$angle = $row[0];
-
-$json = ["angle" => $angle];
-
-echo json_encode($json);
+$result = mysqli_query($con, "UPDATE matches SET player{$player}_ready={$ready}  WHERE id={$matchId};");
 
 ?>
