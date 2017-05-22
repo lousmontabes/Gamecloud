@@ -23,8 +23,8 @@ $row = mysqli_fetch_array($result);
 
 $ready = $row[0];
 
-$json = ["ready" => $ready];
+//$json = ["ready" => $ready];
 
-echo json_encode($json);
+echo $ready;
 
 ?>
