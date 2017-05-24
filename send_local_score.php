@@ -17,7 +17,8 @@ $con = new mysqli($server, $username, $password, $db);
 
 $matchId = $_GET['matchId'];
 $player = $_GET['player'];
+$score = $_GET['score'];
 
-$result = mysqli_query($con, "UPDATE matches SET player{$player}_score = player{$player}_score + 1 WHERE id={$matchId};");
+$result = mysqli_query($con, "UPDATE matches SET player{$player}_score = {$score} WHERE id={$matchId};");
 
 ?>
