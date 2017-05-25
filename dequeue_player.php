@@ -6,15 +6,9 @@
  * Time: 15:48
  */
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+require_once("connection.php");
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$con = new mysqli($server, $username, $password, $db);
-
+$con = getDatabaseConnection();
 $id = $_GET['id'];
 
 $result = mysqli_query($con,"DELETE FROM queue WHERE id = $id");

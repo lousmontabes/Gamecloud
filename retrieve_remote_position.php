@@ -6,9 +6,9 @@
  * Time: 12:52
  */
 
-include("connection.php");
+require_once("connection.php");
 
-$con = connectToDatabase();
+$con = getDatabaseConnection();
 
 $matchId = $_GET['matchId'];
 $player = $_GET['player'];
