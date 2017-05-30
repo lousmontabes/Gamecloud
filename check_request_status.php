@@ -7,7 +7,6 @@
  */
 
 require_once("connection.php");
-
 $con = getDatabaseConnection();
 
 $requestId = $_GET['requestId'];
